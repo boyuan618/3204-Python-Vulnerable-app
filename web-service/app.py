@@ -12,9 +12,7 @@ def home():
 @app.route('/api')
 def readfile():
     with open(request.args.get('filename')) as file:
-        data = file.readlines()
-    
-    return f"<p>{data}</p>"
+        return render_template("image_indiv.html", file_content=file.read())
  
 
 if __name__ == '__main__':
