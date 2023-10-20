@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import base64
  
 
 app = Flask(__name__)
@@ -11,8 +12,13 @@ def home():
 
 @app.route('/api')
 def readfile():
-    with open(request.args.get('filename')) as file:
-        return render_template("image_indiv.html", file_content=file.read())
+    try:
+        with open(request.args.get('filename'), 'r') as file:
+            return render_template("image_indiv.html", file_content=file.read())
+        
+    except:
+        with open(request.args.get('filename'), 'rb') as file:
+            return render_template("image_indiv.html", file_content=base64.b64encode(file.read()).decode()) #return image file as base64
  
 
 if __name__ == '__main__':
