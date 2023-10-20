@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
-import base64
+import base64, logging
+
+logging.basicConfig(filename='web_service.log', level=logging.DEBUG)
  
 
 app = Flask(__name__)
