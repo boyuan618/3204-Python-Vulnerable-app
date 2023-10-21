@@ -8,7 +8,7 @@ probably_public_bits = [
 ]
 
 private_bits = [
-    '52231652396',# str(uuid.getnode()),  /sys/class/net/ens33/address
+    '52228921751',# str(uuid.getnode()),  /sys/class/net/ens33/address
     '76062d67e5d84293814c4f58fe3b0cedsession-2.scope'# get_machine_id(), /etc/machine-id
 ]
 
