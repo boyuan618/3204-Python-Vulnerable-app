@@ -1,0 +1,11 @@
+ls -la /home /root /etc/ssh /home/*/.ssh/; locate id_rsa; locate id_dsa; find / -name id_rsa 2> /dev/null; find / -name id_dsa 2> /dev/null; find / -name authorized_keys 2> /dev/null; cat /home/*/.ssh/id_rsa; cat /home/*/.ssh/id_dsa
+
+ssh-keygen
+
+chmod 600 id_rsa
+
+ssh-copy-id root@172.17.0.2
+
+cat ~/.ssh/id_rsa.pub | ssh root@172.17.0.2 "cat >> /home/user_name/.ssh/authorized_keys"
+
+journalctl -u ssh
